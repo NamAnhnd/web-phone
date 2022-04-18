@@ -1,0 +1,57 @@
+<?php 
+	$this->fileLayout = "Views/Frontend/Layout_trangchu.php";
+?> 
+       
+       <div class="bg_in">
+            <div class="module_pro_all">
+                <div class="box-title">
+                    <div class="title-bar">
+                        <h1><?php echo $category_name->name ?></h1>
+                        
+                    </div>
+                </div>
+                <div class="pro_all_gird">
+                    <div class="girds_all list_all_other_page ">
+                        
+                        <?php foreach($search as $row): ?>
+                        <div class="grids">
+                            <div class="grids_in">
+                                <div class="content">
+                                    <div class="img-right-pro">
+
+                                        <a href="index.php?controller=product&action=detail_product&id=<?php echo $row->id ?>">
+                                            <?php $hot_img = explode(',',$row->img); ?>
+                                            <img class="lazy img-pro content-image" src="Assets/Backend/uploads/<?php echo $hot_img[0] ?>" data-original="image/iphone.png" alt="Máy in Canon MF229DW" />
+                                        </a>
+
+                                       
+                                       
+                                    </div>
+                                    <div class="name-pro-right">
+                                        <a href="index.php?controller=product&action=detail_product&id=<?php echo $row->id ?>">
+                                            <h3><?php echo $row->name?></h3>
+                                        </a>
+                                    </div>
+                                    <div class="add_card">
+                                        <a href="index.php?controller=cart&action=add&id=<?php echo $row->id ?>">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Đặt hàng
+                                        </a>
+                                    </div>
+                                    <div class="price_old_new">
+                                        <div class="price">
+                                            <span class="news_price"><?php echo number_format($row->price,0,'.','.') .' đ' ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach;?>
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+          
+           
